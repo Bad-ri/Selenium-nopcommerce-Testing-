@@ -1,5 +1,6 @@
 package Functionality;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -8,12 +9,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import pages.HomePom;
 import pages.LoginPom;
 
 public class Login {
     WebDriver driver = null ;
     LoginPom LP = new LoginPom();
+    HomePom HP = new HomePom();
 
     public static void main(String[] args) {
 
@@ -21,11 +23,8 @@ public class Login {
 
     @Given("User open the browser")
     public void user_open_the_browser(){
-        String path = System.getProperty("user.dir")+"\\src\\main\\resources\\Driver\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver",path);
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
 
+        driver =  HP.open_browser(driver);
     }
 
     @When("navigate to the login page")
@@ -43,7 +42,7 @@ public class Login {
     @And("User click on login button")
     public void click() throws InterruptedException {
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("div>button[type=\"submit\"]")).click();
+        LP.Click(driver).click();
         Thread.sleep(2000);
 
     }
@@ -51,8 +50,8 @@ public class Login {
     @Then("successfully message will displayed")
     public void successfully_message_will_displayed() throws InterruptedException {
         String Actual = driver.getCurrentUrl();
-        String Expected = "https://demo.nopcommerce.com/";
-        Assert.assertTrue(Actual.contains(Expected),"Error message = Wrong Input");
+        String Expected = "https://demo.nopcommerce.com/login?returnurl=%2F";
+        Assert.assertFalse(Actual.contains(Expected),"Logged in");
         Thread.sleep(4000);
         driver.quit();
     }

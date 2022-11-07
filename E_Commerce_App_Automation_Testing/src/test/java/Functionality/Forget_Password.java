@@ -9,10 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import pages.ForgetPom;
+import pages.HomePom;
 
 public class Forget_Password {
     WebDriver driver = null;
     ForgetPom FP = new ForgetPom();
+    HomePom HP = new HomePom();
 
     public static void main(String[] args) {
 
@@ -20,10 +22,8 @@ public class Forget_Password {
 
     @Given("user open browser3")
     public void user_open_the_browser(){
-        String path = System.getProperty("user.dir")+"\\src\\main\\resources\\Driver\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver",path);
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
+        driver =  HP.open_browser(driver);
 
     }
 
@@ -58,4 +58,6 @@ public class Forget_Password {
         driver.quit();
 
     }
+
+
 }

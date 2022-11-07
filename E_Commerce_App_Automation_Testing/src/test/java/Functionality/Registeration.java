@@ -8,12 +8,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import pages.LoginPom;
+import pages.HomePom;
 import pages.RegisterPom;
 
 public class Registeration {
     WebDriver driver = null ;
     RegisterPom RP = new RegisterPom();
+    HomePom HP = new HomePom();
 
     public static void main(String[] args) {
 
@@ -21,10 +22,8 @@ public class Registeration {
 
     @Given("User open the browser2")
     public void user_open_the_browser(){
-        String path = System.getProperty("user.dir")+"\\src\\main\\resources\\Driver\\chromedriver.exe";
-        System.setProperty("webdriver.chrome.driver",path);
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
+        driver =  HP.open_browser(driver);
 
     }
 
@@ -81,4 +80,6 @@ public class Registeration {
         driver.quit();
 
     }
+
+
 }

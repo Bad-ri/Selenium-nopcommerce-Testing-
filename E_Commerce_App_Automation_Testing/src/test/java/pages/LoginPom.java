@@ -15,5 +15,9 @@ public class LoginPom {
         WebElement find = driver.findElement(password);
         return find;
     }
-
+    public WebElement Click(WebDriver driver){
+        By click = By.cssSelector("div>button[type=\"submit\"]");
+        WebElement find = driver.findElement(click);
+        return find;
+    }
 }
