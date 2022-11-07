@@ -1,0 +1,1 @@
+- Logged user could filter with color

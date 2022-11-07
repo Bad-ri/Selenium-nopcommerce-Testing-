@@ -33,6 +33,10 @@ public class Search {
         LP.username(driver).sendKeys(User);
         LP.password(driver).sendKeys(Pass);
         LP.Click(driver).click();
+        String Actual = driver.getCurrentUrl();
+        String Expected = "https://demo.nopcommerce.com/login?returnurl=%2F";
+        Assert.assertFalse(Actual.contains(Expected),"Logged in");
+        Thread.sleep(2000);
     }
 
     @Given("navigate to Home page")
