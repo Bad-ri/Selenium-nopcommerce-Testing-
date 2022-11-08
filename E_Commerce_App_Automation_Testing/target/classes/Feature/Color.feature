@@ -1,3 +1,4 @@
+@ZLATAN
 Feature: Logged user could filter with color
   Background: open browser and login
     Given User open the browser7

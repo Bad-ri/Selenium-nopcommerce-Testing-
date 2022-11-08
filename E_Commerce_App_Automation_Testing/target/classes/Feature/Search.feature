@@ -1,3 +1,4 @@
+@ZLATAN
 Feature: Logged in user shall search for any product
   Background: open browser and login
     Given User open the browser4

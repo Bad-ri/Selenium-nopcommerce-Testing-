@@ -1,3 +1,4 @@
+@ZLATAN
 Feature: User shall login in the system
   Scenario: User login with valid data
     Given User open the browser

@@ -1,3 +1,4 @@
+@ZLATAN
 Feature: Logged user could add different products to Shopping cart
   Background: open browser and login
     Given User open the browser9

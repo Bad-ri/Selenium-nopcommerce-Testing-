@@ -1,3 +1,4 @@
+@ZLATAN
 Feature: Logged in user shall change the currency of the system
   Background: open browser and login
     Given User open the browser5

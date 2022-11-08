@@ -1,3 +1,4 @@
+@ZLATAN
 Feature: Logged user could select different tags
   Background: open browser and login
     Given User open the browser8
