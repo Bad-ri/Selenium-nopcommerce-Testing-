@@ -93,13 +93,13 @@ public class Order {
     public void user16() throws InterruptedException {
         Thread.sleep(2000);
         OP.save(driver).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         OP.save1(driver).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         OP.save2(driver).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         OP.save3(driver).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         OP.save4(driver).click();
     }
 
