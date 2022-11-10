@@ -1,28 +1,23 @@
-package Functionality;
+package File_Defination;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import pages.*;
+import pages.LoginPom;
+import pages.TagsPom;
+
+import static File_Defination.Hooks.driver;
 
 public class Choose_Tag {
-    WebDriver driver = null ;
-    HomePom HP = new HomePom();
+
     LoginPom LP =new LoginPom();
     TagsPom TP = new TagsPom();
 
     public static void main(String[] args) {
 
-    }
-
-    @Given("User open the browser8")
-    public void user_open_the_browser(){
-
-        driver =  HP.open_browser(driver);
     }
 
     @And("^USER login in the system \"(.*)\" and \"(.*)\"$")
@@ -57,8 +52,6 @@ public class Choose_Tag {
         String Actual = driver.getCurrentUrl();
         String Expected = "https://demo.nopcommerce.com/awesome";
         Assert.assertTrue(Actual.contains(Expected),"Wrong data");
-        Thread.sleep(2000);
-        driver.quit();
 
     }
 }

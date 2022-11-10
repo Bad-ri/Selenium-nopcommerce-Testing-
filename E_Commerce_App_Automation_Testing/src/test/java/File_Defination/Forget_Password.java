@@ -1,29 +1,19 @@
-package Functionality;
+package File_Defination;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import pages.ForgetPom;
-import pages.HomePom;
+
+import static File_Defination.Hooks.driver;
+
 
 public class Forget_Password {
-    WebDriver driver = null;
     ForgetPom FP = new ForgetPom();
-    HomePom HP = new HomePom();
 
     public static void main(String[] args) {
-
-    }
-
-    @Given("user open browser3")
-    public void user_open_the_browser(){
-
-        driver =  HP.open_browser(driver);
 
     }
 
@@ -54,8 +44,6 @@ public class Forget_Password {
         String Actual = driver.findElement(By.className("content")).getText();
         String Expected = "Email with instructions has been sent to you.";
         Assert.assertTrue(Actual.contains(Expected),"Error message = Email dos not exict");
-        Thread.sleep(2000);
-        driver.quit();
 
     }
 

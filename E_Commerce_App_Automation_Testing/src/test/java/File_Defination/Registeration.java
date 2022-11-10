@@ -1,29 +1,21 @@
-package Functionality;
+package File_Defination;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import pages.HomePom;
 import pages.RegisterPom;
 
+import static File_Defination.Hooks.driver;
+
 public class Registeration {
-    WebDriver driver = null ;
+    //WebDriver driver = null ;
     RegisterPom RP = new RegisterPom();
     HomePom HP = new HomePom();
 
     public static void main(String[] args) {
-
-    }
-
-    @Given("User open the browser2")
-    public void user_open_the_browser(){
-
-        driver =  HP.open_browser(driver);
 
     }
 
@@ -77,7 +69,6 @@ public class Registeration {
         String Expected = "Your registration completed";
         Assert.assertTrue(Actual.contains(Expected),"Error message = Wrong Input");
         Thread.sleep(2000);
-        driver.quit();
 
     }
 

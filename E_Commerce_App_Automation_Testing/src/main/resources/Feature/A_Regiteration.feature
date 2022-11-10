@@ -1,7 +1,6 @@
 @ZLATAN
 Feature: User shall be able to register to the system
   Scenario: User enter a valid data
-    Given User open the browser2
     When user navigate to the register page
     And user enter a valid first name "Mohamed"
     And user enter a valid second name "Elbadri"

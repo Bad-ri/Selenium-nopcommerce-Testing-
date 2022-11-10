@@ -1,31 +1,24 @@
-package Functionality;
+package File_Defination;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import pages.Add_Pom;
-import pages.HomePom;
 import pages.LoginPom;
 import pages.Wish_ListPom;
+
+import static File_Defination.Hooks.driver;
 
 public class Wish_List {
     public static void main(String[] args) {
 
     }
-    WebDriver driver = null ;
-    HomePom HP = new HomePom();
+
     LoginPom LP =new LoginPom();
     Wish_ListPom WL = new Wish_ListPom();
 
-    @Given("User open the browser10")
-    public void user_open_the_browser(){
-
-        driver =  HP.open_browser(driver);
-    }
 
     @And("^USER Login in the system \"(.*)\" and \"(.*)\"$")
     public void navigation(String User, String Pass) throws InterruptedException {
@@ -96,7 +89,6 @@ public class Wish_List {
 //        String Expected = "The product has been added to your";
 //        Assert.assertFalse(Actual.contains(Expected),"Wrong data");
 //        Thread.sleep(2000);
-        driver.quit();
 
     }
 

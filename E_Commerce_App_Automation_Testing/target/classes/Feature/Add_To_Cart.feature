@@ -1,7 +1,6 @@
 @ZLATAN
 Feature: Logged user could add different products to Shopping cart
   Background: open browser and login
-    Given User open the browser9
     And USEr login in the system "20199999@fue.edu.eg" and "MohamedElbadri"
   Scenario: User Add product to cart
     Given navigate to shoes page and shoes one

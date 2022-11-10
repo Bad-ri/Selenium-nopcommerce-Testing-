@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src\\main\\resources\\Feature",
-        glue = "Functionality",
+        glue = "File_Defination",
         tags = "@ZLATAN",
         plugin = { "pretty", "html:test-output/cucumber-reports.HTML" },
         monochrome = true

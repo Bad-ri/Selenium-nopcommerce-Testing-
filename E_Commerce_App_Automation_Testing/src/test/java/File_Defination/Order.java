@@ -1,32 +1,23 @@
-package Functionality;
+package File_Defination;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import pages.HomePom;
 import pages.LoginPom;
 import pages.OrderPom;
-import pages.Wish_ListPom;
+
+import static File_Defination.Hooks.driver;
 
 public class Order {
     public static void main(String[] args) {
 
     }
-    WebDriver driver = null ;
-    HomePom HP = new HomePom();
+
     LoginPom LP = new LoginPom();
     OrderPom OP = new OrderPom();
 
-    @Given("User open the browser12")
-    public void user_open_the_browser(){
-
-        driver =  HP.open_browser(driver);
-    }
 
     @And("^USER LOGIN in the system \"(.*)\" and \"(.*)\"$")
     public void navigation(String User, String Pass) throws InterruptedException {
@@ -108,8 +99,7 @@ public class Order {
         String Actual = OP.check(driver).getText();
         String Expected = "Your order has been successfully processed!";
         Assert.assertFalse(Actual.contains(Expected),"Wrong data");
-        Thread.sleep(2000);
-        driver.quit();
+
 
     }
 

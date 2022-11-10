@@ -1,7 +1,6 @@
 @ZLATAN
 Feature: Create successful Order
   Background: open browser and login
-    Given User open the browser12
     And USER LOGIN in the system "20199999@fue.edu.eg" and "MohamedElbadri"
   Scenario: User Create successful Order
     Given Go to Home page

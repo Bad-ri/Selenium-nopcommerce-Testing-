@@ -1,30 +1,18 @@
-package Functionality;
+package File_Defination;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import pages.HomePom;
 import pages.LoginPom;
 
+import static File_Defination.Hooks.driver;
+
 public class Login {
-    WebDriver driver = null ;
     LoginPom LP = new LoginPom();
-    HomePom HP = new HomePom();
 
     public static void main(String[] args) {
 
-    }
-
-    @Given("User open the browser")
-    public void user_open_the_browser(){
-
-        driver =  HP.open_browser(driver);
     }
 
     @When("navigate to the login page")
@@ -52,8 +40,6 @@ public class Login {
         String Actual = driver.getCurrentUrl();
         String Expected = "https://demo.nopcommerce.com/login?returnurl=%2F";
         Assert.assertFalse(Actual.contains(Expected),"Logged in");
-        Thread.sleep(4000);
-        driver.quit();
     }
 
 
