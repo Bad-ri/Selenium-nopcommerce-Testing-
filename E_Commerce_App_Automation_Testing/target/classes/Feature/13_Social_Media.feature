@@ -1,3 +1,4 @@
+@ZLATAN
 Feature: User shall be able to open all The social media links
   Scenario: Check The social media links
     Given open Home page
